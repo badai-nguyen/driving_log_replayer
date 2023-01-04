@@ -286,7 +286,7 @@ class PerceptionEvaluator(Node):
         self.__evaluator = PerceptionEvaluationManager(evaluation_config=evaluation_config)
         self.__sub_perception = self.create_subscription(
             get_perception_msg_type(evaluation_task),
-            "/perception/object_recognition/" + evaluation_task + "/objects",
+            "/perception/object_recognition/" + evaluation_task + "/centerpoint/camera_lidar_fusion/objects",
             self.perception_cb,
             1,
         )

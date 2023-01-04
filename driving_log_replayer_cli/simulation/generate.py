@@ -224,7 +224,7 @@ class TestScriptGenerator:
             # ros2 bag play args
             launch_args += " play_rate:=" + str(self.__rate)
             launch_args += " play_delay:=" + str(self.__delay)
-            launch_args += " input_bag:=" + os.path.join(t4_dataset_path, "input_bag")
+            launch_args += " input_bag:=" + os.path.join(t4_dataset_path, "input_bag_yolox")
 
             # ros2 bag record args
             result_bag_path = os.path.join(output_dir_per_dataset, "result_bag")

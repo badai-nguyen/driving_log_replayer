@@ -27,7 +27,7 @@ TIMEOUT = 900
 
 def count_engine_files() -> int:
     engine_file_regex = os.path.join(
-        get_package_share_directory("lidar_centerpoint"), "data", "*.engine"
+        get_package_share_directory("ml_model_provider"), "data","lidar_centerpoint","*.engine"
     )
     engine_files = glob.glob(engine_file_regex)
     return len(engine_files)
