@@ -64,7 +64,7 @@ def get_driving_log_replayer_common_argument() -> list:
         default_value="true",
         description="Whether to launch autoware or not",
     )
-    add_launch_arg("rviz", default_value="true", description="Whether to display rviz or not")
+    add_launch_arg("rviz", default_value="false", description="Whether to display rviz or not")
     add_launch_arg("scenario_path", description="scenario path")
     add_launch_arg(
         "result_json_path",
@@ -83,7 +83,7 @@ def get_driving_log_replayer_common_argument() -> list:
     add_launch_arg("vehicle_id", default_value="default", description="vehicle specific ID")
 
     # additional argument
-    add_launch_arg("perception_mode", default_value="lidar", description="perception mode")
+    add_launch_arg("perception_mode", default_value="camera_lidar_fusion", description="perception mode")
     add_launch_arg(
         "t4_dataset_path",
         default_value="/opt/autoware/t4_dataset",
@@ -129,7 +129,7 @@ def get_autoware_launch(
             "planning": planning,
             "control": control,
             "scenario_simulation": scenario_simulation,
-            "perception_mode": LaunchConfiguration("perception_mode"),
+            "perception_mode": "camera_lidar_fusion",
             "pose_source": pose_source,
             "twist_source": twist_source,
             "rviz": "false",

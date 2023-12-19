@@ -68,7 +68,7 @@ def generate_launch_description() -> launch.LaunchDescription:
 
     recorder = driving_log_replayer.launch_common.get_regex_recorder(
         "perception.qos.yaml",
-        "^/clock$|^/tf$|/sensing/lidar/concatenated/pointcloud|^/perception/object_recognition/detection/objects$|^/perception/object_recognition/tracking/objects$|^/perception/object_recognition/objects$|^/driving_log_replayer/.*|^/sensing/camera/.*",
+        "^/clock$|^/tf$|/sensing/lidar/concatenated/pointcloud|^/perception/object_recognition/detection/objects$|^/perception/object_recognition/tracking/objects$|^/perception/object_recognition/detection/clustering/camera_lidar_fusion/objects$|^/perception/object_recognition/objects$|^/perception/object_recognition/detection/centerpoint_roi_cluster_fusion/objects$|^/driving_log_replayer/.*|^/sensing/camera/.*",
     )
 
     return launch.LaunchDescription(

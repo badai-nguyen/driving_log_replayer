@@ -169,7 +169,7 @@ class TestScriptGenerator:
         launch_args += " vehicle_model:=" + scenario_yaml_obj["VehicleModel"]
         launch_args += " sensor_model:=" + scenario_yaml_obj["SensorModel"]
         launch_args += " vehicle_id:=" + scenario_yaml_obj["VehicleId"]
-        launch_args += " rviz:=true"
+        launch_args += " rviz:=" + scenario_yaml_obj["Rviz"]
         # diag launch localization
         if scenario_yaml_obj["Evaluation"]["UseCaseName"] == "performance_diag":
             launch_args += " localization:=" + str(
@@ -270,7 +270,7 @@ class TestScriptGenerator:
             launch_args += " vehicle_model:=" + scenario_yaml_obj["VehicleModel"]
             launch_args += " sensor_model:=" + scenario_yaml_obj["SensorModel"]
             launch_args += " vehicle_id:=" + vehicle_id
-            launch_args += " rviz:=true"
+            launch_args += " rviz:=" + scenario_yaml_obj["Rviz"]
             if scenario_yaml_obj.get("PerceptionMode") is not None:
                 perception_mode: str = scenario_yaml_obj["PerceptionMode"]
                 assert perception_mode in self.PERCEPTION_MODES, (

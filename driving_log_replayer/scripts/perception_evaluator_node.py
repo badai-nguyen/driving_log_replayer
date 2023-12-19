@@ -212,6 +212,16 @@ class PerceptionEvaluator(DLREvaluator):
             self.__msg_type = TrackedObjects
             self.__topic_ns = "tracking"
             return True
+        if self.__evaluation_task == "camera_lidar_fusion":
+            self.__frame_id_str = "base_link"
+            self.__msg_type = DetectedObjects
+            self.__topic_ns = "detection/clustering/camera_lidar_fusion"
+            return True
+        if self.__evaluation_task == "centerpoint_roi_cluster_fusion":
+            self.__frame_id_str = "base_link"
+            self.__msg_type = DetectedObjects
+            self.__topic_ns = "detection/centerpoint_roi_cluster_fusion"
+            return True
         self.get_logger().error(f"Unexpected evaluation task: {self.__evaluation_task}")
         return False
 
